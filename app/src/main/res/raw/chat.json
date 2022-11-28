@@ -1,0 +1,267 @@
+{
+  "response" : {
+    "userDetail": {
+      "userId": "1000",
+      "userName": "Steve Williams"
+    },
+    "inbox": [
+      {
+        "senderId": "1001",
+        "senderName": "John Doe",
+        "messages": [
+          {
+            "senderId": "1000",
+            "message": "Hi",
+            "time": "2022-11-11T10:45:00.000Z"
+          },
+          {
+            "senderId": "1001",
+            "message": "Hello",
+            "time": "2022-11-11T10:46:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "How are you?",
+            "time": "2022-11-11T10:47:00.000Z"
+          },
+          {
+            "senderId": "1001",
+            "message": "I am fine. You?",
+            "time": "2022-11-11T10:48:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1002",
+        "senderName": "Theresa Greer",
+        "messages": [
+          {
+            "senderId": "1000",
+            "message": "Good morning",
+            "time": "2022-11-10T10:45:00.000Z"
+          },
+          {
+            "senderId": "1002",
+            "message": "Good morning",
+            "time": "2022-11-10T10:46:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "What doing?",
+            "time": "2022-11-10T10:47:00.000Z"
+          },
+          {
+            "senderId": "1002",
+            "message": "I am working now",
+            "time": "2022-11-10T10:48:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1003",
+        "senderName": "Averi Fleming",
+        "messages": [
+          {
+            "senderId": "1003",
+            "message": "Are you free now for call now?",
+            "time": "2022-11-09T10:45:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "Yes",
+            "time": "2022-11-09T10:46:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "Please call me",
+            "time": "2022-11-09T10:47:00.000Z"
+          },
+          {
+            "senderId": "1003",
+            "message": "Sure",
+            "time": "2022-11-09T10:48:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1004",
+        "senderName": "Chloe Kidd",
+        "messages": [
+          {
+            "senderId": "1000",
+            "message": "Hello",
+            "time": "2022-11-08T10:45:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1005",
+        "senderName": "Hamza Tate",
+        "messages": [
+          {
+            "senderId": "1005",
+            "message": "Good night! Sweet Dreams",
+            "time": "2022-11-08T10:45:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1006",
+        "senderName": "Dawson Christensen",
+        "messages": [
+          {
+            "senderId": "1000",
+            "message": "Happy birthday!",
+            "time": "2022-11-06T10:45:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "Have a great year ahead",
+            "time": "2022-11-06T10:46:00.000Z"
+          },
+          {
+            "senderId": "1006",
+            "message": "Thank you!",
+            "time": "2022-11-06T10:47:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "You're welcome",
+            "time": "2022-11-06T10:48:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1007",
+        "senderName": "Tyshawn Howe",
+        "messages": [
+          {
+            "senderId": "1007",
+            "message": "Are you there?",
+            "time": "2022-11-05T10:45:00.000Z"
+          }
+        ]
+      },{
+        "senderId": "1008",
+        "senderName": "Kiana Macdonald",
+        "messages": [
+          {
+            "senderId": "1000",
+            "message": "Hi",
+            "time": "2022-11-04T10:45:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "Hi",
+            "time": "2022-11-04T10:46:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "Are you there?",
+            "time": "2022-11-04T10:47:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1009",
+        "senderName": "Sofia Marks",
+        "messages": [
+          {
+            "senderId": "1009",
+            "message": "Greeting!",
+            "time": "2022-11-03T10:45:00.000Z"
+          },
+          {
+            "senderId": "1009",
+            "message": "How was your holiday?",
+            "time": "2022-11-03T10:46:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "It was great",
+            "time": "2022-11-03T10:47:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1010",
+        "senderName": "Kamora Scott",
+        "messages": [
+          {
+            "senderId": "1000",
+            "message": "Hi",
+            "time": "2022-11-02T10:45:00.000Z"
+          },
+          {
+            "senderId": "1010",
+            "message": "Hello",
+            "time": "2022-11-02T10:46:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "How are you?",
+            "time": "2022-11-02T10:47:00.000Z"
+          },
+          {
+            "senderId": "1010",
+            "message": "I am fine. You?",
+            "time": "2022-11-02T10:48:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1011",
+        "senderName": "Libby Reed",
+        "messages": [
+          {
+            "senderId": "1000",
+            "message": "Hi",
+            "time": "2022-11-01T10:45:00.000Z"
+          },
+          {
+            "senderId": "1011",
+            "message": "Hello",
+            "time": "2022-11-01T10:46:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "How are you?",
+            "time": "2022-11-01T10:47:00.000Z"
+          },
+          {
+            "senderId": "1011",
+            "message": "I am fine. You?",
+            "time": "2022-11-01T10:48:00.000Z"
+          }
+        ]
+      },
+      {
+        "senderId": "1012",
+        "senderName": "Kaiden Greene",
+        "messages": [
+          {
+            "senderId": "1000",
+            "message": "Hi",
+            "time": "2022-10-10T10:45:00.000Z"
+          },
+          {
+            "senderId": "1012",
+            "message": "Hello",
+            "time": "2022-10-10T10:46:00.000Z"
+          },
+          {
+            "senderId": "1000",
+            "message": "How are you?",
+            "time": "2022-10-10T10:47:00.000Z"
+          },
+          {
+            "senderId": "1012",
+            "message": "I am fine. You?",
+            "time": "2022-10-10T10:48:00.000Z"
+          }
+        ]
+      }
+    ]
+  }
+}
+
