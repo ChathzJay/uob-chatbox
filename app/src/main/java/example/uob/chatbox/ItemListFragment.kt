@@ -1,5 +1,6 @@
 package example.uob.chatbox
 
+import android.content.res.AssetManager
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.LayoutInflater
@@ -11,9 +12,12 @@ import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import example.uob.chatbox.placeholder.PlaceholderContent;
+import com.google.gson.Gson
 import example.uob.chatbox.databinding.FragmentItemListBinding
 import example.uob.chatbox.databinding.ItemListContentBinding
+import example.uob.chatbox.model.ChatResponse
+import example.uob.chatbox.model.GetChatsHistoryResponse
+import example.uob.chatbox.model.InboxItem
 
 /**
  * A Fragment representing a list of Pings. This fragment
@@ -65,7 +69,6 @@ class ItemListFragment : Fragment() {
 
         _binding = FragmentItemListBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -87,38 +90,50 @@ class ItemListFragment : Fragment() {
         itemDetailFragmentContainer: View?
     ) {
 
-        recyclerView.adapter = SimpleItemRecyclerViewAdapter(
-            PlaceholderContent.ITEMS, itemDetailFragmentContainer
-        )
+        val gson = Gson()
+        val chatResponse: GetChatsHistoryResponse = gson.fromJson(activity?.assets?.readAssetsFile("chat.json"), GetChatsHistoryResponse::class.java)
+
+        recyclerView.adapter = chatResponse.response?.inbox?.let {
+            chatResponse.response!!.userDetail?.userId?.let { it1 ->
+                ChatsRecyclerViewAdapter(
+                    it, itemDetailFragmentContainer, it1
+                )
+            }
+        }
     }
 
-    class SimpleItemRecyclerViewAdapter(
-        private val values: List<PlaceholderContent.PlaceholderItem>,
-        private val itemDetailFragmentContainer: View?
+    private fun AssetManager.readAssetsFile(fileName: String): String = open(fileName).bufferedReader().use { it.readText() }
+
+    class ChatsRecyclerViewAdapter(
+        private val values: List<InboxItem>,
+        private val itemDetailFragmentContainer: View?,
+        private val userId: String
     ) :
-        RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
+        RecyclerView.Adapter<ChatsRecyclerViewAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
-            val binding =
-                ItemListContentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            val binding = ItemListContentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return ViewHolder(binding)
-
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val item = values[position]
-            holder.idView.text = item.id
-            holder.contentView.text = item.content
+            holder.nameTextView.text = item.senderName
+            holder.lastMessage.text = item.messages?.get(0)?.message ?: ""
+            holder.lastMessageTime.text = item.messages?.get(0)?.time
 
             with(holder.itemView) {
                 tag = item
                 setOnClickListener { itemView ->
-                    val item = itemView.tag as PlaceholderContent.PlaceholderItem
+                    val item = itemView.tag as InboxItem
                     val bundle = Bundle()
                     bundle.putString(
-                        ItemDetailFragment.ARG_ITEM_ID,
-                        item.id
+                        ItemDetailFragment.USER_ID,
+                        userId
+                    )
+                    bundle.putString(
+                        ItemDetailFragment.INBOX_ITEM_DETAIL,
+                        Gson().toJson(item, InboxItem::class.java)
                     )
                     if (itemDetailFragmentContainer != null) {
                         itemDetailFragmentContainer.findNavController()
@@ -134,10 +149,10 @@ class ItemListFragment : Fragment() {
 
         inner class ViewHolder(binding: ItemListContentBinding) :
             RecyclerView.ViewHolder(binding.root) {
-            val idView: TextView = binding.idText
-            val contentView: TextView = binding.content
+            val nameTextView: TextView = binding.nameTextView
+            val lastMessage: TextView = binding.lastMessage
+            val lastMessageTime: TextView = binding.lastMessageTime
         }
-
     }
 
     override fun onDestroyView() {

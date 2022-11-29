@@ -1,20 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:padding="@dimen/item_padding"
+android:orientation="horizontal">
+
+<ImageView
+    android:id="@+id/id_profile_pic"
+    android:layout_width="@dimen/pro_pic_width"
+    android:layout_height="0dp"
+    app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:src="@drawable/ic_baseline_account_circle_24" />
+
+<TextView
+    android:id="@+id/name_text_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_marginStart="@dimen/text_margin"
+    android:layout_marginTop="@dimen/text_margin_top"
+    android:text="Sample"
+    android:textSize="@dimen/large"
+    android:textStyle="bold"
+    android:textColor="@color/black"
+    android:textAppearance="?attr/textAppearanceListItem"
+    app:layout_constraintStart_toEndOf="@id/id_profile_pic"
+    app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/id_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
+<TextView
+    android:id="@+id/last_message"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/text_margin"
+    android:textSize="@dimen/regular"
+    android:textColor="@color/gray"
+    android:text="Hello!"
+    android:textAppearance="?attr/textAppearanceListItem"
+    app:layout_constraintTop_toBottomOf="@+id/name_text_view"
+    app:layout_constraintStart_toEndOf="@id/id_profile_pic"/>
 
-    <TextView
-        android:id="@+id/content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
-</LinearLayout>
+<TextView
+    android:id="@+id/last_message_time"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/text_margin"
+    android:textSize="@dimen/regular"
+    android:textColor="@color/gray"
+    android:text="12:50 PM"
+    android:textAppearance="?attr/textAppearanceListItem"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginStart="@dimen/pro_pic_width"
+    android:background="@color/gray"
+    app:layout_constraintTop_toBottomOf="@id/last_message"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
