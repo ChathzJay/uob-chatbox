@@ -83,3 +83,10 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+/local.properties
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+
