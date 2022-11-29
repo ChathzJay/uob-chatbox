@@ -46,6 +46,7 @@ class ItemDetailFragment : Fragment() {
                 val inboxDetailStr = it.getString(INBOX_ITEM_DETAIL)
                 val inboxItem = Gson().fromJson(inboxDetailStr, InboxItem::class.java)
                 messages = inboxItem.messages as ArrayList<Message>
+                messages.reversed()
             }
         }
     }
