@@ -2,4 +2,8 @@
     <string name="app_name">chatbox</string>
     <string name="title_item_detail">Item Detail</string>
     <string name="enter_your_message">Enter your message</string>
+
+    <string name="chat">Chat</string>
+    <string name="chats">Chats</string>
+
 </resources>
