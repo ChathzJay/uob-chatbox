@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.google.gson.Gson
 import example.uob.chatbox.ItemDetailFragment.ChatItemRecyclerViewAdapter.Const.INCOMING
 import example.uob.chatbox.ItemDetailFragment.ChatItemRecyclerViewAdapter.Const.OUTGOING
+import example.uob.chatbox.common.Common
 import example.uob.chatbox.databinding.FragmentItemDetailBinding
 import example.uob.chatbox.databinding.ListItemIncomingMessageBinding
 import example.uob.chatbox.databinding.ListItemOutgoingMessageBinding
@@ -120,7 +121,7 @@ class ItemDetailFragment : Fragment() {
 
             fun bind(message: Message) {
                 textView.text = message.message
-                timeTextView.text = message.time
+                timeTextView.text = Common.convertGmtToLocalFullTimeString(message.time)
             }
         }
 
@@ -130,7 +131,7 @@ class ItemDetailFragment : Fragment() {
 
             fun bind(message: Message) {
                 textView.text = message.message
-                timeTextView.text = message.time
+                timeTextView.text = Common.convertGmtToLocalFullTimeString(message.time)
             }
         }
     }

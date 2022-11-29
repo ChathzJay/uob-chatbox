@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+import example.uob.chatbox.common.Common
 import example.uob.chatbox.databinding.FragmentItemListBinding
 import example.uob.chatbox.databinding.ItemListContentBinding
 import example.uob.chatbox.model.ChatResponse
@@ -120,7 +121,7 @@ class ItemListFragment : Fragment() {
             val item = values[position]
             holder.nameTextView.text = item.senderName
             holder.lastMessage.text = item.messages?.get(0)?.message ?: ""
-            holder.lastMessageTime.text = item.messages?.get(0)?.time
+            holder.lastMessageTime.text = Common.convertGmtToLocalFullTimeString(item.messages?.get(0)?.time)
 
             with(holder.itemView) {
                 tag = item
