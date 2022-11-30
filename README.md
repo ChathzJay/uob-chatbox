@@ -33,12 +33,15 @@ Connect an Android device to your development machine.
 ## Screens flow
 
 # Tabs
-![Pixel 4a](https://github.com/ChathzJay/uob-chatbox/blob/main/app/src/main/res/drawable/chatbox_tabs_portrait.png)
-![Pixel 4a](https://github.com/ChathzJay/uob-chatbox/blob/main/app/src/main/res/drawable/chatbox_tab_screen.png)
+<img src="https://github.com/ChathzJay/uob-chatbox/blob/main/app/src/main/res/drawable/chatbox_tabs_portrait.png" width="400">
+<img src="https://github.com/ChathzJay/uob-chatbox/blob/main/app/src/main/res/drawable/chatbox_tab_screen.png" width="600">
 
 # Phone
-![Pixel 4a](https://github.com/ChathzJay/uob-chatbox/blob/main/app/src/main/res/drawable/phone_portrait.png)
-![Pixel 4a](https://github.com/ChathzJay/uob-chatbox/blob/main/app/src/main/res/drawable/phone_landscape.png)
+<p float="left">
+<img src="https://github.com/ChathzJay/uob-chatbox/blob/main/app/src/main/res/drawable/phone_portrait.png" width="400">
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/ChathzJay/uob-chatbox/blob/main/app/src/main/res/drawable/phone_landscape.png" width="400">
+</p>
 
 
 
