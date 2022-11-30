@@ -1,10 +1,10 @@
 # uob-chatbox
 A chatbox sample
 
-Sample Chatbox App (Whatsapp clone)
+Sample Chatbox App
 =============================
 
-This is a sample Android App that clone WhatsApp.
+This is a sample Android App.
 
 ## Building the Sample App
 
