@@ -32,7 +32,7 @@ class ItemDetailFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    lateinit var userId: String
+    private var userId: String? = null
     lateinit var messages: ArrayList<Message>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,17 +57,21 @@ class ItemDetailFragment : Fragment() {
     ): View? {
 
         _binding = FragmentItemDetailBinding.inflate(inflater, container, false)
-        val rootView = binding.root
 
-        return rootView
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val recyclerView: RecyclerView? = binding.itemDetailRecycleView
+
+        // Leaving this not using view binding as it relies on if the view is visible the current
+        // layout configuration (layout, layout-sw600dp)
+        val itemDetailFragmentContainer: View? = view.findViewById(R.id.item_detail_nav_container)
+
         if (recyclerView != null) {
-            setupRecyclerView(recyclerView, userId)
+            userId?.let { setupRecyclerView(recyclerView, it) }
         }
     }
 
@@ -82,7 +86,7 @@ class ItemDetailFragment : Fragment() {
 
     class ChatItemRecyclerViewAdapter(
         private var messages: ArrayList<Message>,
-        private var userId: String
+        private var userId: String?
     ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         private object Const{
